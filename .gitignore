@@ -19,6 +19,9 @@
 #code editor
 .idea
 
+#local fake data
+public/locations.json
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

@@ -8,11 +8,12 @@ import registerServiceWorker from './registerServiceWorker';
 
 export default function start() {
     getCoordinates(JSON_FILE_URL)
-        .then((coords) => {
+        .then((coordinates) => {
             ReactDOM.render(<LocationHistoryMap
                     zoom={GM_ZOOM}
                     center={GM_CENTER}
-                    bootstrapURLKeys={GM_BOOTSTRAP_URL_KEYS}/>,
+                    bootstrapURLKeys={GM_BOOTSTRAP_URL_KEYS}
+                    coordinates={coordinates}/>,
                 document.getElementById('map'));
         });
 }

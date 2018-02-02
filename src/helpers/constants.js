@@ -10,5 +10,6 @@ export const GM_BOOTSTRAP_URL_KEYS = {
     region: 'us'
 };
 
-//service entrypoint
+//paths
 export const JSON_FILE_URL = 'https://api-project-923029851043.firebaseio.com/locations.json';
+//export const JSON_FILE_URL = '/locations.json';
