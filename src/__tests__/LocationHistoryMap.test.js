@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LocationHistoryMap from './LocationHistoryMap';
-import {GM_ZOOM, GM_CENTER, GM_BOOTSTRAP_URL_KEYS} from './helpers/constants';
+import LocationHistoryMap from '../LocationHistoryMap';
+import {GM_ZOOM, GM_CENTER, GM_BOOTSTRAP_URL_KEYS} from '../helpers/constants';
 
 describe('LocationHistoryMap component', function () {
     it('should render a map in container assigned', () => {
