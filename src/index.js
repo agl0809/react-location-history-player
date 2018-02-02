@@ -7,15 +7,15 @@ import {GM_ZOOM, GM_CENTER, GM_BOOTSTRAP_URL_KEYS, JSON_FILE_URL} from './helper
 import registerServiceWorker from './registerServiceWorker';
 
 export default function start() {
-    getCoordinates(JSON_FILE_URL)
-        .then((coordinates) => {
-            ReactDOM.render(<LocationHistoryMap
-                    zoom={GM_ZOOM}
-                    center={GM_CENTER}
-                    bootstrapURLKeys={GM_BOOTSTRAP_URL_KEYS}
-                    coordinates={coordinates}/>,
-                document.getElementById('map'));
-        });
+  getCoordinates(JSON_FILE_URL)
+  .then((coordinates) => {
+    ReactDOM.render(<LocationHistoryMap
+        zoom={GM_ZOOM}
+        center={GM_CENTER}
+        bootstrapURLKeys={GM_BOOTSTRAP_URL_KEYS}
+        coordinates={coordinates}/>,
+      document.getElementById('map'));
+  });
 }
 
 start();

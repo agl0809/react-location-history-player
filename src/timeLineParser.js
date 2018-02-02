@@ -1,16 +1,16 @@
 function timeLineParser(coordinatesText, SCALAR_E7) {
-    let coordsParsed = [];
+  let coordsParsed = [];
 
-    JSON.parse(coordinatesText).forEach((point) => {
-        let lat, lon;
+  JSON.parse(coordinatesText).forEach((point) => {
+    let lat, lon;
 
-        lat = point.latitudeE7 * SCALAR_E7;
-        lon = point.longitudeE7 * SCALAR_E7;
+    lat = point.latitudeE7 * SCALAR_E7;
+    lon = point.longitudeE7 * SCALAR_E7;
 
-        coordsParsed.push([lat, lon]);
-    });
+    coordsParsed.push([lat, lon]);
+  });
 
-    return coordsParsed;
+  return coordsParsed;
 }
 
 export {timeLineParser};
