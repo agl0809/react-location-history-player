@@ -1,22 +1,22 @@
 import {SCALAR_E7} from './helpers/constants';
 
+function _getLagLngCoordinates(coordinates) {
+  return coordinates.map(elem =>
+    [ //[lat, lng]
+      elem.latitudeE7 * SCALAR_E7,
+      elem.longitudeE7 * SCALAR_E7
+    ]
+  );
+}
+
 function _getCoordinates(coordinates) {
-  let coordinatesParsed = [];
-
-  coordinates.forEach((point) => {
-    const lat = point.latitudeE7 * SCALAR_E7;
-    const lon = point.longitudeE7 * SCALAR_E7;
-
-    coordinatesParsed.push([lat, lon]);
-  });
-
-  return coordinatesParsed;
+  return coordinates.locations ?
+    _getLagLngCoordinates(coordinates.locations) :
+    _getLagLngCoordinates(coordinates);
 }
 
 function locationHistoryParser(serviceResponse = '') {
-  const coordinates = JSON.parse(serviceResponse);
-  return coordinates.locations ?
-    _getCoordinates(coordinates.locations) : _getCoordinates(coordinates);
+  return _getCoordinates(JSON.parse(serviceResponse));
 }
 
 export {locationHistoryParser};
