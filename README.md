@@ -1,46 +1,65 @@
 - [Installation](#installation)
+- [Settings](#settings)
 - [Available scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
+- [Dependencies](#scaffolding)  
 - [Scaffolding](#scaffolding)
-- [Data Source](#data-source)
+
 
 ## Installation
-
 ```bash
 git clone https://github.com/agl0809/react-location-history-player/
 cd react-location-history-player
 npm install
 ```
 
-## Available Scripts
+## Settings
+There are two different ways to setting up the data provided in **constants.js**<br>
 
+[Firebase service](https://api-project-923029851043.firebaseio.com/locations.json)<br>
+By default Firebase service example will be used.   
+```javascript
+export const JSON_FILE_URL = 'https://api-project-923029851043.firebaseio.com/locations.json';
+``` 
+
+[Google Takeout](https://takeout.google.com/settings/takeout)<br> 
+Use a specific data file downloading the location history JSON file. Then move it to `/public` project folder .<br>
+```javascript
+export const JSON_FILE_URL = '/YOUR_FILE_NAME.json';
+``` 
+
+## Available scripts  
 In the project directory, you can run:
 
-- **npm start**
+**npm start**<br>
+Runs the app in the development mode.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br>
+The page will reload if you make edits.You will also see any lint errors in the console.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+**npm test**<br>
+Launches the test runner in the interactive watch mode.
 
-- **npm test**
+**npm run build**<br>
+Builds the app for production to the `build` folder.
 
-Launches the test runner in the interactive watch mode.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.<br>
+The build is minified and the filenames include the hashes.
 
-- **npm run build**
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
+## Dependencies 
+[react](https://github.com/facebook/react)<br>
+[google-map-react](https://github.com/istarkov/google-map-react)
 
 ## Scaffolding
-https://github.com/facebook/create-react-app
+[create-react-app](https://github.com/facebook/create-react-app)
 
-## Data source
-Location History JSON https://takeout.google.com/settings/takeout<br>
-Firebase service https://api-project-923029851043.firebaseio.com/locations.json
+
+
+
+
+
+
+ 
