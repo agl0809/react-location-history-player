@@ -1,4 +1,4 @@
-import {timeLineParser} from '../locationHistoryParser';
+import {locationHistoryParser} from '../locationHistoryParser';
 
 describe('parsing a service response', () => {
 
@@ -10,7 +10,7 @@ describe('parsing a service response', () => {
       const fileContent = '[{"latitudeE7": ' + latOne + ',"longitudeE7": ' + lonOne + '}]';
       const expectedObject = [[latOne * SCALAR_E7, lonOne * SCALAR_E7]];
 
-      const response = timeLineParser(fileContent);
+      const response = locationHistoryParser(fileContent);
 
       expect(response).toEqual(expectedObject);
     });
@@ -25,7 +25,7 @@ describe('parsing a service response', () => {
         '"longitudeE7": ' + lonOne + '}]}';
       const expectedObject = [[latOne * SCALAR_E7, lonOne * SCALAR_E7]];
 
-      const response = timeLineParser(fileContent, SCALAR_E7);
+      const response = locationHistoryParser(fileContent, SCALAR_E7);
 
       expect(response).toEqual(expectedObject);
     });
