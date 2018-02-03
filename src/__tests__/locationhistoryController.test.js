@@ -1,6 +1,6 @@
 import {getCoordinates} from '../locationHistoryController';
 import * as serviceDep from '../service';
-import * as parserDep from '../timeLineParser'
+import * as parserDep from '../locationHistoryParser'
 import {SCALAR_E7} from '../helpers/constants';
 
 describe('locationHistoryController', () => {
@@ -19,7 +19,7 @@ describe('locationHistoryController', () => {
       });
     });
 
-    parserDep.timeLineParser = jest.fn(() => expectedCoords);
+    parserDep.locationHistoryParser = jest.fn(() => expectedCoords);
 
     promise = getCoordinates(JSONFileUrl);
 
@@ -27,7 +27,7 @@ describe('locationHistoryController', () => {
 
     return promise.then((data) => {
       expect(serviceDep.service).toBeCalledWith(JSONFileUrl);
-      expect(parserDep.timeLineParser).toBeCalledWith(fileContent, SCALAR_E7);
+      expect(parserDep.locationHistoryParser).toBeCalledWith(fileContent, SCALAR_E7);
     });
   });
 })
