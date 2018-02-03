@@ -1,4 +1,4 @@
-import {timeLineParser} from './timeLineParser';
+import {timeLineParser} from './locationHistoryParser';
 import {service} from './service';
 import {SCALAR_E7} from './helpers/constants';
 

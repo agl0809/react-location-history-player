@@ -1,6 +1,6 @@
 import {getCoordinates} from '../locationHistoryController';
 import * as serviceDep from '../service';
-import * as parserDep from '../timeLineParser'
+import * as parserDep from '../locationHistoryParser'
 import {SCALAR_E7} from '../helpers/constants';
 
 describe('locationHistoryController', () => {
