@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
 import {getCoordinates} from './locationHistoryController';
-import registerServiceWorker from './registerServiceWorker';
 import {GM_ZOOM, GM_CENTER_LAT, GM_CENTER_LNG, GM_KEY, GM_LANGUAGE, GM_REGION, GM_VISUALIZATION, JSON_FILE_URL} from './helpers/constants';
 import LocationHistoryMap from './LocationHistoryMap';
 
-function init() {
+export default function init() {
   getCoordinates(JSON_FILE_URL)
   .then((coordinates) => {
     ReactDOM.render(<LocationHistoryMap
@@ -23,4 +22,3 @@ function init() {
 }
 
 init();
-registerServiceWorker();
