@@ -15,7 +15,7 @@ function _getCoordinates(coordinates) {
     _getLagLngCoordinates(coordinates);
 }
 
-function locationHistoryParser(serviceResponse = '') {
+function locationHistoryParser(serviceResponse = '[]') {
   return _getCoordinates(JSON.parse(serviceResponse));
 }
 
