@@ -2,7 +2,7 @@
 export const SCALAR_E7 = 0.0000001;
 
 //google-map-react
-export const GM_ZOOM = 13;
+export const GM_ZOOM = 11;
 export const GM_CENTER_LAT = 37.7657;
 export const GM_CENTER_LNG = -122.4469;
 export const GM_KEY = 'AIzaSyBCMMT6VTHOjw2pyT_jTLQ8ga4xGkfydGI';
