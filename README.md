@@ -5,7 +5,8 @@
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
-- [Dependencies](#scaffolding)  
+- [Material-UI integration](#material-ui-integration)
+- [Third party](#third-party)  
 - [Scaffolding](#scaffolding)
 
 
@@ -17,7 +18,7 @@ npm install
 ```
 
 ## Settings
-There are two different ways to setting up the data provided in **constants.js**<br>
+There are two different ways to set up the data provided in **constants.js**<br>
 
 [Firebase service](https://api-project-923029851043.firebaseio.com/locations.json)<br>
 By default Firebase service example will be used.   
@@ -49,9 +50,54 @@ Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.<br>
 The build is minified and the file names include the hashes.
 
-## Third party links
-[react](https://github.com/facebook/react)<br>
+## Material-UI integration
+### Installation
+Adding latest version using CLI in the project
+```
+npm install --save material-ui
+```
+#### React-Tap-Event-Plugin
+Some components use react-tap-event-plugin to listen for touch events because onClick is not fast enough.
+It's not needed for versions 0.19.0 and higher.
+```javascript
+import injectTapEventPlugin from 'react-tap-event-plugin';
+ 
+injectTapEventPlugin();
+```
+
+#### Roboto Font
+Material-UI was designed with the [Roboto](https://fonts.google.com/?selection.family=Roboto:300,400,500) font in mind. We include it in `index.html`.
+```javascript
+    <script>
+      var WebFontConfig = {
+        google: { families: [ 'Roboto:400,300,500:latin' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+```
+
+### Links
+**Material-ui** |
+[official site](http://www.material-ui.com/) |
+[github repository](http://www.material-ui.com/) |
+[npm package](https://www.npmjs.com/package/material-ui) |<br>
+React components that implement Google's Material Design
+
+**Material Design** |
+[official site](https://material.io) |
+[guidelines](https://material.io/guidelines/) |<br>
+Material Design is a unified system that combines theory, resources, and tools for crafting digital experiences.
+
+## Third party 
 [google-map-react](https://github.com/istarkov/google-map-react)
+
 [google map heatmaplayer](https://developers.google.com/maps/documentation/javascript/heatmaplayer)
 
 ## Scaffolding
@@ -63,4 +109,3 @@ The build is minified and the file names include the hashes.
 
 
 
- 
