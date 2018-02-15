@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import GoogleMap from 'google-map-react';
-import './styles/LocationHistoryMap.css';
+import '../styles/LocationHistoryMap.css';
 
 export default class LocationHistoryMap extends Component {
   _getHeatMapLayerOptions(points, maps) {
@@ -47,20 +47,22 @@ export default class LocationHistoryMap extends Component {
     return {
       key: this.props.gmKey,
       language: this.props.language,
-      region: this.props.region,
-      libraries: this.props.libraries
+      libraries: this.props.libraries,
+      region: this.props.region
     }
   };
 
   render() {
     return (
-      <GoogleMap
-        defaultCenter={this._getDefaultCenter()}
-        defaultZoom={this.props.zoom}
-        bootstrapURLKeys={this._getBootstrapURLKeys()}
-        onGoogleApiLoaded={({map, maps}) => this._renderHeatMap(map, maps, this.props.coordinates)}
-        yesIWantToUseGoogleMapApiInternals={true}
-      />
+      <div className='map'>
+        <GoogleMap
+          defaultCenter={this._getDefaultCenter()}
+          defaultZoom={this.props.zoom}
+          bootstrapURLKeys={this._getBootstrapURLKeys()}
+          onGoogleApiLoaded={({map, maps}) => this._renderHeatMap(map, maps, this.props.coordinates)}
+          yesIWantToUseGoogleMapApiInternals={true}
+        />
+      </div>
     );
   }
 }

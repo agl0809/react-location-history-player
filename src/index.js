@@ -5,8 +5,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';// Theme
 import injectTapEventPlugin from 'react-tap-event-plugin';// Click handler
 import {GM_ZOOM, GM_CENTER_LAT, GM_CENTER_LNG, GM_KEY, GM_LANGUAGE, GM_REGION, GM_VISUALIZATION, JSON_FILE_URL} from './helpers/constants';
 import {getCoordinates} from './locationHistoryController';
-import LocationHistoryMap from './LocationHistoryMap';
-import Header from './Header';
+import LocationHistoryMap from './components/LocationHistoryMap';
+import Header from './components/Header';
 
 
 injectTapEventPlugin();
