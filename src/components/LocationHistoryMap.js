@@ -54,7 +54,7 @@ export default class LocationHistoryMap extends Component {
 
   render() {
     return (
-      <div className='map'>
+      <div className="map">
         <GoogleMap
           defaultCenter={this._getDefaultCenter()}
           defaultZoom={this.props.zoom}
