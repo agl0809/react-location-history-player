@@ -1,6 +1,6 @@
 {
   "name": "react-location-history-player",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "dependencies": {
     "google-map-react": "^0.29.0",
@@ -10,13 +10,23 @@
     "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
-    "react-scripts": "1.1.0"
+    "eslint": "^4.18.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.6.1",
+    "prettier": "^1.10.2",
+    "react-scripts": "1.1.0",
+    "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --verbose",
     "coverage": "react-scripts test --env=jsdom --coverage",
+    "eslint": "node_modules/.bin/eslint .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

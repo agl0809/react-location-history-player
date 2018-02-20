@@ -1,13 +1,9 @@
-import {locationHistoryParser} from './locationHistoryParser';
-import {service} from './service';
-import {SCALAR_E7} from './helpers/constants';
+import { SCALAR_E7 } from './helpers/constants';
 
-function getCoordinates(JSONFileUrl) {
-  return new Promise((resolve, reject) => {
-    service(JSONFileUrl).then(fileContent => {
-      resolve(locationHistoryParser(fileContent, SCALAR_E7));
+export default function getCoordinates(options) {
+  return new Promise(resolve => {
+    options.service(options.url).then(fileContent => {
+      resolve(options.parser(fileContent, SCALAR_E7));
     });
   });
 }
-
-export {getCoordinates};

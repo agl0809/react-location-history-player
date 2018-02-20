@@ -1,6 +1,5 @@
-import {service} from '../service';
+import service from '../service';
 
-let ready_state, state;
 let oldXMLHttpRequest;
 
 function createMockXhr(responseText, readyState, status) {
@@ -23,7 +22,7 @@ function xmlHttpRequestBackup() {
 }
 
 function xmlHttpRequestRestore() {
-  window.XMLHttpRequest = oldXMLHttpRequest
+  window.XMLHttpRequest = oldXMLHttpRequest;
 }
 
 function whenReadFile(fileUrl, xhr) {
@@ -33,10 +32,12 @@ function whenReadFile(fileUrl, xhr) {
   return promise;
 }
 
-describe('making a serviceDep', () => {
+describe('making a request', () => {
   const fileUrl = 'any url';
+  const readyState = 4;
+  const state = 200;
 
-  beforeEach(function () {
+  beforeEach(() => {
     xmlHttpRequestBackup();
   });
 
@@ -44,31 +45,23 @@ describe('making a serviceDep', () => {
     xmlHttpRequestRestore();
   });
 
-  it('should return an object with a valid state and the content of a valid json file', (done) => {
-    ready_state = 4;
-    state = 200;
-    const fileContent = {key: 'any content'};
-    let promise, xhr;
+  it('should return an object with a valid state and the content of a valid json file', done => {
+    const fileContent = { key: 'any content' };
+    const xhr = createMockXhr(fileContent, readyState, state);
+    const promise = whenReadFile(fileUrl, xhr);
 
-    xhr = createMockXhr(fileContent, ready_state, state);
-    promise = whenReadFile(fileUrl, xhr);
-
-    promise.then((response) => {
+    promise.then(response => {
       expect(response).toEqual(fileContent);
       done();
     });
   });
 
-  it('should return an error if the file is invalid', (done) => {
-    ready_state = 4;
-    state = 200;
-    const xhrError = {error: 'any error'};
-    let promise, xhr;
+  it('should return an error if the file is invalid', done => {
+    const xhrError = { error: 'any error' };
+    const xhr = createMockXhr(xhrError, readyState, state);
+    const promise = whenReadFile(fileUrl, xhr);
 
-    xhr = createMockXhr(xhrError, ready_state, state);
-    promise = whenReadFile(fileUrl, xhr);
-
-    promise.catch((response) => {
+    promise.catch(response => {
       expect(response).toEqual(xhrError);
       done();
     });
