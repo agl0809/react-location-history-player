@@ -1,7 +1,7 @@
-function service(fileUrl) {
+export default function service(fileUrl) {
   return new Promise((resolve, reject) => {
     const request = new XMLHttpRequest();
-    request.overrideMimeType("application/json");
+    request.overrideMimeType('application/json');
     request.onreadystatechange = () => {
       if (request.readyState === 4 && request.status === 200) {
         const resp = request.responseText;
@@ -16,5 +16,3 @@ function service(fileUrl) {
     request.send(null);
   });
 }
-
-export {service};
