@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/agl0809/react-location-history-player.svg?branch=master)](https://travis-ci.org/agl0809/react-location-history-player)
 
-View [DEMO](https://react-location-history-player.herokuapp.com/)
-View [DOCUMENTATION](https://agl0809.github.io/react-location-history-player/)
+Try a [DEMO](https://react-location-history-player.herokuapp.com/)<br>
+Check out the [DOCUMENTATION](https://agl0809.github.io/react-location-history-player/)
 
 ## Installation
 ```bash
