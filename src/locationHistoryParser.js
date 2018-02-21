@@ -1,9 +1,9 @@
 import { SCALAR_E7 } from './helpers/constants';
 
 function getLagLngCoordinates(coordinates) {
-  return coordinates.map(elem => [
-    elem.latitudeE7 * SCALAR_E7,
-    elem.longitudeE7 * SCALAR_E7
+  return coordinates.map(({ latitudeE7, longitudeE7 }) => [
+    latitudeE7 * SCALAR_E7,
+    longitudeE7 * SCALAR_E7
   ]);
 }
 
