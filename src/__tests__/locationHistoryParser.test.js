@@ -9,7 +9,7 @@ describe('locationHistoryParser', () => {
 
     describe('managing an array of objects', () => {
       it('should return an array of coordinates parsed properly', () => {
-        const fileContent = `[{"latitudeE7": ${latOne},"longitudeE7": ${lonOne}}]`;
+        const fileContent = [{ latitudeE7: latOne, longitudeE7: lonOne }];
 
         const response = locationHistoryParser(fileContent);
 
@@ -19,9 +19,9 @@ describe('locationHistoryParser', () => {
 
     describe('managing an object with locations key', () => {
       it('should return an array of coordinates parsed properly', () => {
-        const fileContent =
-          `{"locations": [{"latitudeE7": ${latOne},` +
-          `"longitudeE7": ${lonOne}}]}`;
+        const fileContent = {
+          locations: [{ latitudeE7: latOne, longitudeE7: lonOne }]
+        };
 
         const response = locationHistoryParser(fileContent, SCALAR_E7);
 
@@ -32,11 +32,9 @@ describe('locationHistoryParser', () => {
 
   describe('retrieving an invalid response', () => {
     it('should return an empty array', () => {
-      const expectedObject = [];
-
       const response = locationHistoryParser();
 
-      expect(response).toEqual(expectedObject);
+      expect(response).toEqual([]);
     });
   });
 });

@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --verbose",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "eslint": "node_modules/.bin/eslint .",
+    "eslint": "node_modules/.bin/eslint . --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

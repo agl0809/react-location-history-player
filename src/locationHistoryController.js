@@ -1,9 +1,6 @@
-import { SCALAR_E7 } from './helpers/constants';
+export default async function getCoordinates({ url, parser }) {
+  const response = await fetch(url);
+  const data = await response.json();
 
-export default function getCoordinates(options) {
-  return new Promise(resolve => {
-    options.service(options.url).then(fileContent => {
-      resolve(options.parser(fileContent, SCALAR_E7));
-    });
-  });
+  return parser(data);
 }

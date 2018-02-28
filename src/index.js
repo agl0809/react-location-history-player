@@ -4,7 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; // Theme
 import injectTapEventPlugin from 'react-tap-event-plugin'; // Click handler
 import './styles/index.css';
 import locationHistoryParser from './locationHistoryParser';
-import service from './service';
 import {
   GM_ZOOM,
   GM_CENTER_LAT,
@@ -32,7 +31,6 @@ export default function init() {
 
   getCoordinates({
     url: JSON_FILE_URL,
-    service,
     parser: locationHistoryParser
   }).then(coordinates => {
     ReactDOM.render(

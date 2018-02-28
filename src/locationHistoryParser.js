@@ -13,6 +13,6 @@ function getCoordinates(coordinates) {
     : getLagLngCoordinates(coordinates);
 }
 
-export default function locationHistoryParser(serviceResponse = '[]') {
-  return getCoordinates(JSON.parse(serviceResponse));
+export default function locationHistoryParser(serviceResponse = []) {
+  return getCoordinates(serviceResponse);
 }
