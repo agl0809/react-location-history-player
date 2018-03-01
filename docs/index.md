@@ -106,6 +106,10 @@ node_modules/.bin/eslint --fix ./src
 [Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)
 
 ### Refs
+[Formating code automatically - CRA docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
+
+[displaying lint output in the editor - create-react-app docs](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
+
 [Create React App: Linting all the things](https://groundberry.github.io/development/2017/06/11/create-react-app-linting-all-the-things.html)
 
 [Set up create-react-app with Redux, React Router, Redux Thunk, Prettier, SCSS, Airbnb eslint, Standard stylelint, and CSS modules](https://medium.com/stephenkoo/how-to-set-up-create-react-app-redux-react-router-redux-thunk-prettier-scss-airbnb-eslint-dda0bba5616a)

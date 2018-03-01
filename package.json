@@ -1,6 +1,6 @@
 {
   "name": "react-location-history-player",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "google-map-react": "^0.29.0",
@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --verbose",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "eslint": "node_modules/.bin/eslint .",
+    "eslint": "node_modules/.bin/eslint . --fix",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
