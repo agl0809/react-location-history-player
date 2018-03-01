@@ -1,6 +1,6 @@
 {
   "name": "react-location-history-player",
-  "version": "0.9.0-0",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "google-map-react": "^0.29.0",

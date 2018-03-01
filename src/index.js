@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; // Theme
 import injectTapEventPlugin from 'react-tap-event-plugin'; // Click handler
 import './styles/index.css';
-import locationHistoryParser from './parseLocations';
+import parseLocations from './parseLocations';
+import fetchLocations from './fetchLocations';
 import {
   GM_ZOOM,
   GM_CENTER_LAT,
@@ -14,7 +15,6 @@ import {
   GM_VISUALIZATION,
   JSON_FILE_URL
 } from './helpers/constants';
-import fetchLocations from './fetchLocations';
 import LocationHistoryMap from './components/LocationHistoryMap';
 import Header from './components/Header';
 
@@ -31,7 +31,7 @@ export default function init() {
 
   fetchLocations({
     url: JSON_FILE_URL,
-    parser: locationHistoryParser
+    parser: parseLocations
   }).then(coordinates => {
     ReactDOM.render(
       <MuiThemeProvider>
