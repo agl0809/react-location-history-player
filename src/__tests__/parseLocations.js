@@ -1,6 +1,6 @@
-import locationHistoryParser from '../locationHistoryParser';
+import parseLocations from '../parseLocations';
 
-describe('locationHistoryParser', () => {
+describe('parseLocations', () => {
   describe('retrieving a valid response', () => {
     const SCALAR_E7 = 0.0000001;
     const latOne = 1;
@@ -9,9 +9,9 @@ describe('locationHistoryParser', () => {
 
     describe('managing an array of objects', () => {
       it('should return an array of coordinates parsed properly', () => {
-        const fileContent = [{ latitudeE7: latOne, longitudeE7: lonOne }];
+        const locations = [{ latitudeE7: latOne, longitudeE7: lonOne }];
 
-        const response = locationHistoryParser(fileContent);
+        const response = parseLocations(locations);
 
         expect(response).toEqual(expectedObject);
       });
@@ -19,11 +19,11 @@ describe('locationHistoryParser', () => {
 
     describe('managing an object with locations key', () => {
       it('should return an array of coordinates parsed properly', () => {
-        const fileContent = {
+        const locations = {
           locations: [{ latitudeE7: latOne, longitudeE7: lonOne }]
         };
 
-        const response = locationHistoryParser(fileContent, SCALAR_E7);
+        const response = parseLocations(locations, SCALAR_E7);
 
         expect(response).toEqual(expectedObject);
       });
@@ -32,7 +32,7 @@ describe('locationHistoryParser', () => {
 
   describe('retrieving an invalid response', () => {
     it('should return an empty array', () => {
-      const response = locationHistoryParser();
+      const response = parseLocations();
 
       expect(response).toEqual([]);
     });

@@ -1,6 +1,6 @@
-import getCoordinates from '../locationHistoryController';
+import fetchLocations from '../fetchLocations';
 
-describe('#getCoordinates', () => {
+describe('#fetchLocations', () => {
   const response = 'any response';
 
   beforeEach(() => {
@@ -16,18 +16,18 @@ describe('#getCoordinates', () => {
     );
   });
 
-  it('should read the file content', async () => {
-    const JSONFileUrl = 'anyURL';
-    const expectedReturnValue = 'any value parsed';
+  it('should read and parse the data retrieved', async () => {
+    const serviceUrl = 'any url';
+    const expectedReturnValue = 'any response parsed';
     const parserDependency = jest.fn(() => expectedReturnValue);
     const options = {
-      url: JSONFileUrl,
+      url: serviceUrl,
       parser: parserDependency
     };
 
-    const returnValue = await getCoordinates(options);
+    const returnValue = await fetchLocations(options);
 
-    expect(global.fetch).toHaveBeenCalledWith(JSONFileUrl);
+    expect(global.fetch).toHaveBeenCalledWith(serviceUrl);
     expect(parserDependency).toHaveBeenCalledWith(response);
     expect(returnValue).toBe(expectedReturnValue);
   });

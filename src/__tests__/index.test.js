@@ -1,4 +1,4 @@
-import * as locationHistoryController from '../locationHistoryController';
+import * as locationHistoryController from '../fetchLocations';
 
 describe('running up the app', () => {
   it('should get the coordinates and render a map component', () => {
